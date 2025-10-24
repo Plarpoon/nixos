@@ -2,18 +2,28 @@
 
 {
   environment.systemPackages = with pkgs; [
-    wget
-    curl
-    htop
-    tree
-    nil
-    gh
-    alacritty
-    starship
-    direnv
+    # Compression
+    lzop
     p7zip
     unrar
-    lzop
+
+    # Development Tools
+    direnv
+    gh
+    tmux
+
+    # Nix
+    nil
     nixfmt-rfc-style
+
+    # Shell
+    alacritty
+    starship
+
+    # System Utilities
+    btop
+    curl
+    tree
+    wget
   ];
 }
