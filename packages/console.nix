@@ -13,6 +13,9 @@
     git
     tmux
 
+    # Fonts
+    nerd-fonts.fira-code
+
     # Nix
     nil
     nixfmt-rfc-style
