@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./console.nix
     ./browsers.nix
+    ./console.nix
     ./editor.nix
     ./steam.nix
     ./wine.nix

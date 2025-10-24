@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ./kde.nix
-    ./flatpak.nix
-    ./docker.nix
-    ./ssh.nix
     ./appimage.nix
+    ./docker.nix
+    ./flatpak.nix
+    ./kde.nix
+    ./ssh.nix
   ];
 }

@@ -15,13 +15,13 @@
       nixosConfigurations.daisy = nixpkgs.lib.nixosSystem {
         modules = [
           ./configuration.nix
+          ./filesystems
           ./nix-ld.nix
           ./packages
-          ./services
           ./programming
-          ./filesystems
-          ./systemd-units
+          ./services
           ./system
+          ./systemd-units
 
           home-manager.nixosModules.home-manager
           {

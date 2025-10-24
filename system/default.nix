@@ -2,13 +2,13 @@
 
 {
   imports = [
-    ./hardware.nix
-    ./network.nix
-    ./locale.nix
-    ./users.nix
     ./clamav.nix
-    ./maintenance.nix
     ./flake-lock-updater.nix
+    ./hardware.nix
     ./kernel-parameters.nix
+    ./locale.nix
+    ./maintenance.nix
+    ./network.nix
+    ./users.nix
   ];
 }

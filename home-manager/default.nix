@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./home.nix
-    ./git.nix
-    ./starship.nix
     ./alacritty.nix
-    ./nushell.nix
+    ./git.nix
     ./gpg.nix
+    ./home.nix
+    ./nushell.nix
+    ./starship.nix
   ];
 }
