@@ -1,10 +1,15 @@
 { config, pkgs, ... }:
 
 {
-  programs.git.settings.user = {
+  programs.git = {
     enable = true;
-    name = "Alessandro Suha";
-    email = "github@plarp.net";
+
+    settings = {
+      user = {
+        name = "Alessandro Suha";
+        email = "github@plarp.net";
+      };
+    };
 
     signing = {
       key = "B32EE4AA9247F217";
