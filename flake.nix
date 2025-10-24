@@ -10,7 +10,7 @@
   };
 
   outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
+    { nixpkgs, home-manager, ... }:
     {
       nixosConfigurations.daisy = nixpkgs.lib.nixosSystem {
         modules = [

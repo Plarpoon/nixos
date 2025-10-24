@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   users.users.plarpoon = {
@@ -8,6 +8,5 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [ ];
   };
 }

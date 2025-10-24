@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
-  ./tsm-startup.nix
+    ./tsm-startup.nix
   ];
 }
