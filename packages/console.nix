@@ -10,6 +10,7 @@
     # Development Tools
     direnv
     gh
+    git
     tmux
 
     # Nix
