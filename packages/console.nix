@@ -8,9 +8,13 @@
     unrar
 
     # Development Tools
+    clang
+    clippy
     direnv
+    gcc
     gh
     git
+    openssl
     tmux
 
     # Fonts
