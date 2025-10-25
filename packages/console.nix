@@ -6,6 +6,7 @@
     lzop
     p7zip
     unrar
+    unzip
 
     # Development Tools
     clang
@@ -32,6 +33,7 @@
     btop
     curl
     tree
+    jq
     wget
   ];
 }
