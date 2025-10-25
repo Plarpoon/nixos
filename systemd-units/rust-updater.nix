@@ -1,17 +1,8 @@
 { pkgs, ... }:
 
 # you need to run at least once "rustup default stable" to set a default toolchain
+
 {
-  environment.systemPackages = with pkgs; [
-    rustup
-    cargo-update
-  ];
-
-  environment.variables = {
-    RUSTUP_HOME = "$HOME/.rustup";
-    CARGO_HOME = "$HOME/.cargo";
-  };
-
   systemd.user.services.rustup-updater = {
     description = "Update Rust toolchains and cargo packages";
 
