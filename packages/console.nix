@@ -27,6 +27,7 @@
 
     # Shell
     alacritty
+    fastfetch
     starship
 
     # System Utilities
