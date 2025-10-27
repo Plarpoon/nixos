@@ -13,6 +13,8 @@
       ExecStart = "${pkgs.wineWowPackages.stable}/bin/wine tsmapplication.exe";
       Environment = "WINEPREFIX=/home/plarpoon/.wine";
       TimeoutStopSec = 5;
+      KillMode = "mixed";
+      KillSignal = "SIGTERM";
     };
   };
 }
