@@ -8,5 +8,6 @@
     ./home.nix
     ./nushell.nix
     ./starship.nix
+    ./tmux.nix
   ];
 }

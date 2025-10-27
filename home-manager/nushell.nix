@@ -15,9 +15,9 @@
 
     # config.nu
     configFile.text = ''
-      # Auto-start tmux - attach to 'main' or create it
       if ($env.TMUX? | is-empty) {
-          exec tmux new-session -A -s main
+        try { ^tmux kill-session -t main } catch { }
+        exec tmux new-session -s main
       }
     '';
 
@@ -25,12 +25,6 @@
     envFile.text = ''
       use std/util "path add"
       path add "~/.cargo/bin"
-
-      # Starship
-      mkdir ($nu.data-dir | path join "vendor/autoload")
-      starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-      use ~/.cache/starship/init.nu
-      starship config command_timeout 10000
 
       # GPG
       $env.GIT_GPG_COMMAND = "gpg --pinentry-mode=loopback"

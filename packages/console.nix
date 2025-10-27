@@ -16,7 +16,6 @@
     gh
     git
     openssl
-    tmux
 
     # Fonts
     nerd-fonts.fira-code
