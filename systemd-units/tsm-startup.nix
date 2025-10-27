@@ -12,6 +12,7 @@
       WorkingDirectory = "/home/plarpoon/.wine/drive_c/Program Files (x86)/TradeSkillMaster Application/app";
       ExecStart = "${pkgs.wineWowPackages.stable}/bin/wine tsmapplication.exe";
       Environment = "WINEPREFIX=/home/plarpoon/.wine";
+      TimeoutStopSec = 5;
     };
   };
 }
