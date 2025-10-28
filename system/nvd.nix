@@ -7,6 +7,7 @@
     supportsDryActivation = true;
     text = ''
       if [[ -e /run/current-system ]]; then
+        export PATH="${pkgs.nix}/bin:$PATH"
         ${pkgs.nvd}/bin/nvd diff /run/current-system "$systemConfig"
       fi
     '';
