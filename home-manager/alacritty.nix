@@ -22,11 +22,6 @@
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
 
-      terminal.shell = {
-        program = "${pkgs.nushell}/bin/nu";
-        args = [ "--login" ];
-      };
-
       window = {
         dynamic_title = true;
         opacity = 1.0;
