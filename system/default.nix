@@ -9,6 +9,7 @@
     ./locale.nix
     ./maintenance.nix
     ./network.nix
+    ./nvd.nix
     ./users.nix
   ];
 }
