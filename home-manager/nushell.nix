@@ -14,12 +14,12 @@
     };
 
     # config.nu
-    configFile.text = ''
-      if ($env.TMUX? | is-empty) {
-        try { ^tmux kill-session -t main } catch { }
-        exec tmux new-session -s main
-      }
-    '';
+    # configFile.text = ''
+    #   if ($env.TMUX? | is-empty) {
+    #     try { ^tmux kill-session -t main } catch { }
+    #     exec tmux new-session -s main
+    #   }
+    # '';
 
     # env.nu
     envFile.text = ''
