@@ -10,6 +10,7 @@
     ./maintenance.nix
     ./network.nix
     ./nvd.nix
+    ./printer.nix
     ./users.nix
   ];
 }

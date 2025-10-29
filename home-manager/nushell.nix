@@ -8,18 +8,10 @@
     shellAliases = {
       neofetch = "fastfetch";
       cat = "bat --color=always";
-      htop = "btm";
+      htop = "btop";
       ll = "ls -a";
       rwatch = "cargo watch -q -c -w src/ -x 'run -q'";
     };
-
-    # config.nu
-    # configFile.text = ''
-    #   if ($env.TMUX? | is-empty) {
-    #     try { ^tmux kill-session -t main } catch { }
-    #     exec tmux new-session -s main
-    #   }
-    # '';
 
     # env.nu
     envFile.text = ''

@@ -30,6 +30,7 @@
     starship
 
     # System Utilities
+    bat
     btop
     curl
     tree
