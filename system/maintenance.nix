@@ -1,8 +1,11 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Limit boot entries to 7 generations
   boot.loader.systemd-boot.configurationLimit = 7;
+
+  # Kernel version
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Automatically garbage collect old generations
   nix.gc = {
@@ -11,9 +14,19 @@
     options = "--delete-older-than 1w";
   };
 
-  # Firmware updates
   services.fwupd.enable = true;
-
-  # AMD CPU microcode updates
+  hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
+
+  hardware.amdgpu = {
+    initrd.enable = true; # Load amdgpu driver early in boot
+    opencl.enable = true;
+  };
+
+  # Graphics support
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
 }
