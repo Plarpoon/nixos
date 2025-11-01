@@ -1,5 +1,5 @@
 {
-  description = "daisy central NixOS flake";
+  description = "daisy NixOS flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

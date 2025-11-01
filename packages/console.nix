@@ -15,7 +15,10 @@
     gcc
     gh
     git
+    gnumake
+    nodejs
     openssl
+    statix
 
     # Fonts
     nerd-fonts.fira-code
