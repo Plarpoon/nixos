@@ -7,5 +7,6 @@
     ./flatpak.nix
     ./kde.nix
     ./ssh.nix
+    ./tailscale.nix
   ];
 }
