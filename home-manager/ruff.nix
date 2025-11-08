@@ -6,7 +6,7 @@
 
     settings = {
       line-length = 120;
-      target-version = "py3";
+      target-version = "py313";
 
       lint = {
         select = [ "ALL" ];

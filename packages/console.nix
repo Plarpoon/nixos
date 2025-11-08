@@ -12,6 +12,7 @@
     clang
     clippy
     direnv
+    file
     gcc
     gh
     git
@@ -24,7 +25,6 @@
     nerd-fonts.fira-code
 
     # Nix
-    appimage-run
     nil
     nixfmt-rfc-style
 
