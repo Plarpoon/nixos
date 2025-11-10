@@ -3,6 +3,7 @@
 {
   imports = [
     ./clamav.nix
+    ./fonts.nix
     ./flake-lock-updater.nix
     ./hardware.nix
     ./kernel-parameters.nix

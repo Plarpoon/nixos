@@ -21,9 +21,6 @@
     openssl
     statix
 
-    # Fonts
-    nerd-fonts.fira-code
-
     # Nix
     nil
     nixfmt-rfc-style
