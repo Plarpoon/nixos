@@ -2,10 +2,21 @@
 
 {
   environment.systemPackages = with pkgs; [
-    python3
+    (python3.withPackages (
+      ps: with ps; [
+        pip
+        virtualenv
 
-    python3Packages.pylint
-    python3Packages.vulture
+        # Analysis tools
+        pylint
+        vulture
+
+        # Libraries
+        matplotlib
+      ]
+    ))
+
+    # Standalone tools
     ruff
   ];
 }
