@@ -17,7 +17,6 @@
     gh
     git
     gnumake
-    nodejs
     openssl
     statix
 
