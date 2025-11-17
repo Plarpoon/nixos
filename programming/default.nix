@@ -7,5 +7,7 @@
     ./rust.nix
     ./nodejs.nix
     ./lua.nix
+
+    ./editor
   ];
 }
