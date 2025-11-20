@@ -13,5 +13,6 @@
     ./nvd.nix
     ./printer.nix
     ./users.nix
+    ./systemd-resolved.nix
   ];
 }

@@ -6,6 +6,7 @@
     ./docker.nix
     ./flatpak.nix
     ./kde.nix
+    ./mullvad.nix
     ./ssh.nix
     ./tailscale.nix
   ];
