@@ -3,6 +3,7 @@
 {
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
 
     matchBlocks = {
       "lnu_gitlab" = {
@@ -15,6 +16,9 @@
       "*" = {
         user = "plarpoon";
         port = 22;
+        forwardAgent = false;
+        forwardX11 = false;
+        compression = true;
       };
     };
   };
