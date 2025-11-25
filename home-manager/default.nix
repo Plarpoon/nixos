@@ -8,6 +8,7 @@
     ./home.nix
     ./nushell.nix
     ./starship.nix
+    ./ssh-config.nix
     ./ruff.nix
   ];
 }
