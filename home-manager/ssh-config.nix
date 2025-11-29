@@ -1,9 +1,12 @@
-{ ... }:
+{
+  config,
+  lib,
+  ...
+}:
 
 {
   programs.ssh = {
     enable = true;
-    # enableDefaultConfig = false;
 
     matchBlocks = {
       "lnu_gitlab" = {
@@ -22,4 +25,16 @@
       };
     };
   };
+
+  # Copy SSH config instead of symlinking
+  # So the permissions and ownership will not be wrong
+  home.activation.copySshConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ -L "$HOME/.ssh/config" ]; then
+      rm "$HOME/.ssh/config"
+    fi
+
+    # Copy from the generated config
+    cp ${config.home.file.".ssh/config".source} $HOME/.ssh/config
+    chmod 600 $HOME/.ssh/config
+  '';
 }
