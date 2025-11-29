@@ -3,7 +3,7 @@
 {
   programs.ssh = {
     enable = true;
-    enableDefaultConfig = false;
+    # enableDefaultConfig = false;
 
     matchBlocks = {
       "lnu_gitlab" = {

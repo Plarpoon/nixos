@@ -10,4 +10,6 @@
       "wheel"
     ];
   };
+
+  environment.shells = [ pkgs.nushell ];
 }

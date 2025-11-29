@@ -27,13 +27,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/5c1cb44d-7d83-49db-9026-60d0919bafaf";
-    fsType = "btrfs";
-    options = [ "subvol=@" ];
+    device = "/dev/disk/by-uuid/7926529c-8a6d-46ea-98a2-20e2b40ff29d";
+    fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/E7F7-40C6";
+    device = "/dev/disk/by-uuid/CAD4-9E92";
     fsType = "vfat";
     options = [
       "fmask=0077"
@@ -41,36 +40,20 @@
     ];
   };
 
-  fileSystems."/mnt/ssd-big" = {
-    device = "/dev/disk/by-uuid/2dbc264f-9213-4946-9444-dd830ab4fcde";
-    fsType = "btrfs";
-  };
-
-  fileSystems."/mnt/m2" = {
-    device = "/dev/disk/by-uuid/694119c6-4b91-414d-94aa-282a2fb15254";
-    fsType = "btrfs";
-  };
-
-  fileSystems."/mnt/mega-m2" = {
-    device = "/dev/disk/by-uuid/bff0db9f-0b97-4d3c-8f6b-8cbb4ff2ae0e";
-    fsType = "btrfs";
-  };
-
-  fileSystems."/mnt/vault" = {
-    device = "/dev/disk/by-uuid/9b1fa832-7114-4ed0-a7eb-59bc44c70b03";
-    fsType = "btrfs";
-  };
-
-  fileSystems."/mnt/ssd-huge" = {
-    device = "/dev/disk/by-uuid/d5dfee8d-2b43-4282-8544-5a5f3314cd95";
-    fsType = "btrfs";
-  };
-
   swapDevices = [
-    { device = "/dev/disk/by-uuid/45d131f4-40bd-49e2-bb44-c89929c8238b"; }
+    { device = "/dev/disk/by-uuid/51c5363f-81a1-4a43-adf8-64e7c2fd8dd7"; }
   ];
+
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp11s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
-
