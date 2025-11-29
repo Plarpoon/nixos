@@ -6,6 +6,9 @@
   systemd.user.services.rustup-updater = {
     description = "Update Rust toolchains and cargo packages";
 
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+
     path = [
       pkgs.cargo-update
       pkgs.cargo

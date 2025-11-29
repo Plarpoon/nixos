@@ -7,6 +7,15 @@ in
   systemd.user.services.nixos-release-notifier = {
     description = "Check for new NixOS releases";
 
+    after = [
+      "plasma-workspace.target"
+      "network-online.target"
+    ];
+    wants = [
+      "plasma-workspace.target"
+      "network-online.target"
+    ];
+
     script = ''
       # Get current version from flake.lock
       CURRENT=$(${pkgs.jq}/bin/jq -r '.nodes.nixpkgs.original.ref' ${configPath}/flake.lock | sed 's/nixos-//')

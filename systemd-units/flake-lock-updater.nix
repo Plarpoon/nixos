@@ -8,6 +8,9 @@ in
   systemd.user.services.flake-lock-updater = {
     description = "Update NixOS flake.lock";
 
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+
     serviceConfig = {
       Type = "oneshot";
       WorkingDirectory = "/home/plarpoon/nixos-config";

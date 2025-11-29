@@ -3,8 +3,14 @@
 {
   systemd.user.services.tsm-application = {
     description = "TradeSkillMaster Application";
-    after = [ "plasma-workspace.target" ];
-    wants = [ "plasma-workspace.target" ];
+    after = [
+      "plasma-workspace.target"
+      "network-online.target"
+    ];
+    wants = [
+      "plasma-workspace.target"
+      "network-online.target"
+    ];
     wantedBy = [ "plasma-workspace.target" ];
 
     serviceConfig = {
