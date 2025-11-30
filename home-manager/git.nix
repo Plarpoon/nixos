@@ -4,8 +4,12 @@
   programs.git = {
     enable = true;
 
-    userName = "Alessandro Suha";
-    userEmail = "github@plarp.net";
+    settings = {
+      user = {
+        name = "Alessandro Suha";
+        email = "github@plarp.net";
+      };
+    };
 
     signing = {
       key = "B32EE4AA9247F217";
