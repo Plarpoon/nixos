@@ -3,15 +3,13 @@
 {
   systemd.user.services.tsm-application = {
     description = "TradeSkillMaster Application";
+
     after = [
-      "plasma-workspace.target"
+      "graphical-session.target"
       "network-online.target"
     ];
-    wants = [
-      "plasma-workspace.target"
-      "network-online.target"
-    ];
-    wantedBy = [ "plasma-workspace.target" ];
+    wants = [ "network-online.target" ];
+    wantedBy = [ "graphical-session.target" ];
 
     serviceConfig = {
       Type = "simple";
@@ -21,6 +19,8 @@
       TimeoutStopSec = 5;
       KillMode = "mixed";
       KillSignal = "SIGTERM";
+      Restart = "on-failure";
+      RestartSec = "10s";
     };
   };
 }

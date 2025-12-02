@@ -12,6 +12,7 @@
       ll = "ls -a";
       rwatch = "cargo watch -q -c -w src/ -x 'run -q'";
 
+      # NixOS
       nixos-switch = "sudo nixos-rebuild switch --flake ~/nixos-config#daisy";
       nixos-boot = "sudo nixos-rebuild boot --flake ~/nixos-config#daisy";
       nixos-dry = "sudo nixos-rebuild dry-build --flake ~/nixos-config#daisy";

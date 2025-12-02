@@ -8,13 +8,10 @@ in
     description = "Check for new NixOS releases";
 
     after = [
-      "plasma-workspace.target"
+      "graphical-session.target"
       "network-online.target"
     ];
-    wants = [
-      "plasma-workspace.target"
-      "network-online.target"
-    ];
+    wants = [ "network-online.target" ];
 
     script = ''
       # Get current version from flake.lock
@@ -34,7 +31,7 @@ in
 
   systemd.user.timers.nixos-release-notifier = {
     description = "Check for NixOS releases every 15 minutes";
-    wantedBy = [ "graphical-session.target" ];
+    wantedBy = [ "timers.target" ];
 
     timerConfig = {
       OnCalendar = "*:0/15";

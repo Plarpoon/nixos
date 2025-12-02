@@ -1,9 +1,10 @@
 { pkgs, ... }:
 
-# you need to run at least once "rustup default stable" to set a default toolchain
-
+let
+  targetUser = "plarpoon";
+in
 {
-  systemd.user.services.rustup-updater = {
+  systemd.services.rustup-updater = {
     description = "Update Rust toolchains and cargo packages";
 
     after = [ "network-online.target" ];
@@ -12,21 +13,35 @@
     path = [
       pkgs.cargo-update
       pkgs.cargo
+      pkgs.rustup
+      pkgs.curl
     ];
 
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.rustup}/bin/rustup update && cargo install-update -a'";
+      User = targetUser;
+      Environment = "HOME=/home/${targetUser}";
     };
+
+    script = ''
+      # Quick network check
+      if ! ${pkgs.curl}/bin/curl -s --connect-timeout 2 https://github.com > /dev/null 2>&1; then
+        echo "Network unavailable, skipping Rust update"
+        exit 0
+      fi
+
+      ${pkgs.rustup}/bin/rustup update && ${pkgs.cargo-update}/bin/cargo install-update -a
+    '';
   };
 
-  systemd.user.timers.rustup-updater = {
+  systemd.timers.rustup-updater = {
     description = "Update Rust toolchains and cargo packages daily";
     wantedBy = [ "timers.target" ];
 
     timerConfig = {
       OnCalendar = "daily";
       Persistent = true;
+      RandomizedDelaySec = "10m";
     };
   };
 }
