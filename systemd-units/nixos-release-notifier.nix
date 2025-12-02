@@ -7,13 +7,17 @@ in
   systemd.user.services.nixos-release-notifier = {
     description = "Check for new NixOS releases";
 
-    after = [
-      "graphical-session.target"
-      "network-online.target"
-    ];
-    wants = [ "network-online.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+    };
 
     script = ''
+      # Quick network check
+      if ! ${pkgs.curl}/bin/curl -s --connect-timeout 2 https://api.github.com > /dev/null 2>&1; then
+        echo "Network unavailable, skipping release check"
+        exit 0
+      fi
+
       # Get current version from flake.lock
       CURRENT=$(${pkgs.jq}/bin/jq -r '.nodes.nixpkgs.original.ref' ${configPath}/flake.lock | sed 's/nixos-//')
 
