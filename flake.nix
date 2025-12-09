@@ -1,5 +1,5 @@
 {
-  description = "daisy NixOS flake";
+  description = "NixOS flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
@@ -11,27 +11,47 @@
 
   outputs =
     { nixpkgs, home-manager, ... }:
+    let
+      mkSystem =
+        {
+          hostname,
+          system,
+          username,
+        }:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          specialArgs = {
+            inherit hostname username;
+          };
+
+          modules = [
+            ./${hostname}
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+
+              home-manager.users.${username} = import ./${hostname}/home-manager;
+            }
+          ];
+        };
+    in
     {
-      nixosConfigurations.daisy = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./configuration.nix
-          ./filesystems
-          ./nix-ld.nix
-          ./packages
-          ./programming
-          ./services
-          ./system
-          ./systemd-units
+      nixosConfigurations = {
+        daisy = mkSystem {
+          hostname = "daisy";
+          system = "x86_64-linux";
+          username = "plarpoon";
+        };
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-
-            home-manager.users.plarpoon = import ./home-manager;
-          }
-        ];
+        bruno = mkSystem {
+          hostname = "bunnybook_air";
+          system = "aarch64-linux";
+          username = "plarpoon";
+        };
       };
     };
 }
