@@ -1,15 +1,16 @@
-{
-  ...
-}:
+{ ... }:
 
 {
+  # Additional storage mounts (non-boot-critical)
+  # These drives have "nofail" option so system boots even if they're disconnected
+
   fileSystems."/mnt/ssd-huge" = {
     device = "/dev/disk/by-uuid/d5dfee8d-2b43-4282-8544-5a5f3314cd95";
     fsType = "btrfs";
     options = [
       "defaults"
       "nofail"
-      "compress=zstd"
+      "compress=zstd" # BTRFS transparent compression
     ];
   };
 
@@ -23,11 +24,11 @@
     ];
   };
 
-  #  fileSystems."/mnt/ssd-small" = {
-  #    device = "/dev/disk/by-uuid/d3a3c56e-021a-4537-9fec-9f734f8ee7fc";
-  #    fsType = "btrfs";
-  #    options = [ "defaults" "nofail" "compress=zstd" ];
-  #  };
+  #fileSystems."/mnt/ssd-small" = {
+  #  device = "/dev/disk/by-uuid/d3a3c56e-021a-4537-9fec-9f734f8ee7fc";
+  #  fsType = "btrfs";
+  #  options = [ "defaults" "nofail" "compress=zstd" ];
+  #};
 
   fileSystems."/mnt/vault" = {
     device = "/dev/disk/by-uuid/9b1fa832-7114-4ed0-a7eb-59bc44c70b03";
@@ -59,17 +60,17 @@
     ];
   };
 
-  # Windows NTFS partitions
+  # Windows NTFS partitions (dual-boot support)
   fileSystems."/mnt/windows1" = {
     device = "/dev/disk/by-uuid/FAA6EE00A6EDBCEF";
     fsType = "ntfs-3g";
     options = [
       "defaults"
       "nofail"
-      "uid=1000"
-      "gid=100"
-      "dmask=022"
-      "fmask=133"
+      "uid=1000" # Your user ID
+      "gid=100" # users group
+      "dmask=022" # Directory permissions
+      "fmask=133" # File permissions
     ];
   };
 
