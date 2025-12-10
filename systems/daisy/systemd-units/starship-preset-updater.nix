@@ -12,7 +12,7 @@
     };
 
     script = ''
-      # Download pure preset and prepend command_timeout
+      # Download starship preset and prepend command_timeout
       {
         echo "command_timeout = 10000"
         echo ""

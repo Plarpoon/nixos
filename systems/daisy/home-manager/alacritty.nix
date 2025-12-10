@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 
 {
   programs.alacritty = {
@@ -32,14 +32,4 @@
       };
     };
   };
-
-  # Clone alacritty themes repo
-  home.activation.cloneAlacrittyThemes = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ ! -d "$HOME/.config/alacritty/themes/.git" ]; then
-      ${pkgs.git}/bin/git clone https://github.com/alacritty/alacritty-theme "$HOME/.config/alacritty/themes" || echo "Warning: Could not clone alacritty themes (network may not be ready), will retry on next activation"
-    else
-      cd "$HOME/.config/alacritty/themes"
-      ${pkgs.git}/bin/git pull || echo "Warning: Could not update alacritty themes"
-    fi
-  '';
 }
