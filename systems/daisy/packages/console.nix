@@ -23,6 +23,7 @@
     # Nix
     nil
     nixfmt-rfc-style
+    nix-index
 
     # Shell
     alacritty
@@ -33,7 +34,10 @@
     bat
     btop
     curl
+    ethtool
     tree
+    sysfsutils
+    pciutils
     jq
     wget
   ];
