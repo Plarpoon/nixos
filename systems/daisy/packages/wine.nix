@@ -2,8 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    wineWowPackages.staging
-    wineWowPackages.waylandFull
+    winePackages.staging
+    winePackages.waylandFull
     winetricks
   ];
 }

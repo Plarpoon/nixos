@@ -3,13 +3,13 @@
 {
   systemd.user.services.tsm-application = {
     description = "TradeSkillMaster Application";
-    
+
     after = [ "graphical-session.target" ];
     wantedBy = [ "graphical-session.target" ];
 
     serviceConfig = {
       Type = "simple";
-      WorkingDirectory = "/home/plarpoon/.wine/drive_c/Program Files (x86)/TradeSkillMaster Application/app";
+      WorkingDirectory = "/home/plarpoon/.wine/drive_c/Program Files/TradeSkillMaster Application/app";
       Environment = "WINEPREFIX=/home/plarpoon/.wine";
       TimeoutStopSec = 5;
       KillMode = "mixed";
@@ -23,8 +23,8 @@
         echo "Network unavailable, skipping TSM startup"
         exit 0
       fi
-      
-      exec ${pkgs.wineWowPackages.stable}/bin/wine tsmapplication.exe
+
+      exec ${pkgs.winePackages.staging}/bin/wine tsmapplication.exe
     '';
   };
 }
