@@ -40,5 +40,6 @@
     pciutils
     jq
     wget
+    nmap
   ];
 }

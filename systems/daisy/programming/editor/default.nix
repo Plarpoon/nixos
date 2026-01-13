@@ -6,6 +6,6 @@
     ./vscode.nix
     ./typst.nix
     ./lazyvim.nix
-    ./zed.nix
+    #./zed.nix
   ];
 }
