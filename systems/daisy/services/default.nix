@@ -3,6 +3,7 @@
 {
   imports = [
     ./appimage.nix
+    ./cosmic.nix
     ./docker.nix
     ./flatpak.nix
     ./kde.nix
