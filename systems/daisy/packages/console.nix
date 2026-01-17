@@ -7,6 +7,7 @@
     p7zip
     unrar
     unzip
+    unar
 
     # Development Tools
     clang

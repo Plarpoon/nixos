@@ -24,7 +24,7 @@
         exit 0
       fi
 
-      exec ${pkgs.winePackages.staging}/bin/wine tsmapplication.exe
+      exec ${pkgs.winePackages.staging}/bin/wine TSMApplication.exe
     '';
   };
 }
