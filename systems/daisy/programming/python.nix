@@ -18,5 +18,6 @@
 
     # Standalone tools
     ruff
+    conda
   ];
 }

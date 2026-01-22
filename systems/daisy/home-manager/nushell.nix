@@ -31,5 +31,23 @@
       $env.config.buffer_editor = "${pkgs.neovim}/bin/nvim"
       $env.config.show_banner = false
     '';
+
+    # config.nu
+    configFile.text = ''
+      # Auto-activate Python .venv when entering directories
+      $env.config.hooks = {
+        env_change: {
+          PWD: [
+            {|before, after|
+              # Auto-activate .venv if it exists
+              if (".venv" | path exists) {
+                $env.VIRTUAL_ENV = ($env.PWD | path join ".venv")
+                $env.PATH = ($env.PATH | prepend ($env.VIRTUAL_ENV | path join "bin"))
+              }
+            }
+          ]
+        }
+      }
+    '';
   };
 }

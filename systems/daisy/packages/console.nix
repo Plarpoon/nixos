@@ -35,6 +35,7 @@
     bat
     btop
     curl
+    dig
     ethtool
     tree
     sysfsutils
