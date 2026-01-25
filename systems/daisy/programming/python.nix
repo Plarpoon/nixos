@@ -18,6 +18,6 @@
 
     # Standalone tools
     ruff
-    conda
+    micromamba
   ];
 }
