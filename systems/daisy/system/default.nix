@@ -10,6 +10,7 @@
     ./locale.nix
     ./maintenance.nix
     ./network.nix
+    ./nixos-optimiser.nix
     ./nvd.nix
     ./printer.nix
     ./users.nix

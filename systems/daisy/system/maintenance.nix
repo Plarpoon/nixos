@@ -14,6 +14,11 @@
     options = "--delete-older-than 1w";
   };
 
+  nix.optimise = {
+    automatic = true;
+    dates = [ "weekly" ];
+  };
+
   services.fwupd.enable = true;
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
@@ -31,5 +36,4 @@
       rocmPackages.clr.icd
     ];
   };
-
 }
