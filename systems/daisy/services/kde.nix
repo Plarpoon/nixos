@@ -9,11 +9,9 @@
 
   environment.systemPackages = with pkgs; [
     kdePackages.partitionmanager
-    kdePackages.plasma-firewall
-    kdePackages.kdeconnect-kde
+    #kdePackages.kdeconnect-kde # iPhone fucking sucks man.
     kdePackages.kio-admin
     kdePackages.sweeper
-    kdePackages.ksystemlog
 
     # Spell checking
     hunspell
