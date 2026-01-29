@@ -7,6 +7,7 @@
     ./rust.nix
     ./nodejs.nix
     ./lua.nix
+    ./java.nix
 
     ./editor
   ];
