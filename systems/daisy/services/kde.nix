@@ -9,6 +9,11 @@
 
   environment.systemPackages = with pkgs; [
     kdePackages.partitionmanager
+    kdePackages.plasma-firewall
+    kdePackages.kdeconnect-kde
+    kdePackages.kio-admin
+    kdePackages.sweeper
+    kdePackages.ksystemlog
 
     # Spell checking
     hunspell
