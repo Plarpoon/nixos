@@ -1,9 +1,8 @@
 { pkgs, ... }:
 
 {
-
-  environment.systemPackages = [
-    pkgs.lua
+  environment.systemPackages = with pkgs; [
+    lua
+    luaPackages.luacheck
   ];
-
 }

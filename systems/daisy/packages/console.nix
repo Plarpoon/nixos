@@ -8,6 +8,7 @@
     unrar
     unzip
     unar
+    zip
 
     # Development Tools
     clang
