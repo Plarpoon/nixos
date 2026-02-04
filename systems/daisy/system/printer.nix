@@ -12,20 +12,22 @@
     "scanner"
   ];
 
-  services.printing = {
-    enable = true;
-    drivers = [
-      pkgs.gutenprint
-      pkgs.hplipWithPlugin
-      pkgs.brlaser
-      pkgs.epson-escpr2
-    ];
-  };
+  services = {
+    printing = {
+      enable = true;
+      drivers = [
+        pkgs.gutenprint
+        pkgs.hplipWithPlugin
+        pkgs.brlaser
+        pkgs.epson-escpr2
+      ];
+    };
 
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
   };
 
   hardware.sane = {

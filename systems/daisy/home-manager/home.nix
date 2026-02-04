@@ -1,9 +1,11 @@
 { ... }:
 
 {
-  home.username = "plarpoon";
-  home.homeDirectory = "/home/plarpoon";
-  home.stateVersion = "25.05"; # Version at initial installation of the OS.
+  home = {
+    username = "plarpoon";
+    homeDirectory = "/home/plarpoon";
+    stateVersion = "25.05"; # Version at initial installation of the OS.
+  };
 
   programs.home-manager.enable = true;
 }
