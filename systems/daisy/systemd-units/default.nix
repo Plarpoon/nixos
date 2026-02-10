@@ -8,5 +8,6 @@
     ./starship-preset-updater.nix
     ./tsm-startup.nix
     ./nixos-release-notifier.nix
+    ./nixos-readme-updater.nix
   ];
 }
