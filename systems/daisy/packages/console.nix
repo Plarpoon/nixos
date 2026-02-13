@@ -21,6 +21,8 @@
     gnumake
     openssl
     statix
+    web-ext
+    minify
 
     # Nix
     nil
