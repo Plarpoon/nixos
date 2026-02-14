@@ -13,6 +13,7 @@
   environment.systemPackages =
     (with pkgs.kdePackages; [
       partitionmanager
+      plasma-firewall
       #kdeconnect-kde # iPhone fucking sucks man.
       kio-admin
       sweeper

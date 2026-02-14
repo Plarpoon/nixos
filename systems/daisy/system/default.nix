@@ -5,6 +5,8 @@
     ./clamav.nix
     ./fonts.nix
     ./flake-lock-updater.nix
+    ./firewall.nix
+    ./grub.nix
     ./hardware.nix
     ./kernel-parameters.nix
     ./locale.nix
@@ -13,6 +15,7 @@
     ./nixos-optimiser.nix
     ./nvd.nix
     ./printer.nix
+    ./plymouth.nix
     ./users.nix
     ./systemd-resolved.nix
   ];
