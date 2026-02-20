@@ -6,5 +6,6 @@
     device = "nodev"; # for UEFI
     efiSupport = true;
     useOSProber = true;
+    gfxmodeEfi = "2560x1440";
   };
 }

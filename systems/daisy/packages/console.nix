@@ -23,6 +23,8 @@
     statix
     web-ext
     minify
+    inxi
+    mesa-demos
 
     # Nix
     nil

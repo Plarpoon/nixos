@@ -17,6 +17,7 @@
     ./printer.nix
     ./plymouth.nix
     ./users.nix
+    ./samba.nix
     ./systemd-resolved.nix
   ];
 }
