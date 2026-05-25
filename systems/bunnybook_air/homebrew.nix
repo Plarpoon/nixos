@@ -16,13 +16,12 @@
     casks = [
       "librewolf"
       "jellyfin-media-player"
-      "zulip"
       "maccy"
       "dbeaver-community"
+      "postgres-app"
     ];
 
     brews = [
-      "postgresql@18"
       "direnv"
     ];
   };

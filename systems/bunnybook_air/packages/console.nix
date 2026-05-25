@@ -32,6 +32,7 @@
     # Development Tools
     gh
     cmake
+    android-tools
 
     # System Utilities
     bat

@@ -5,6 +5,7 @@ _:
     #./browsers.nix
     ./console.nix
     ./cloudflared.nix
-    ./zulip.nix
+    ./krita.nix
+    #./zulip.nix
   ];
 }
