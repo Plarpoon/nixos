@@ -2,10 +2,10 @@ _:
 
 {
   imports = [
-    #./browsers.nix
+    # ./browsers.nix
     ./console.nix
     ./cloudflared.nix
-    ./krita.nix
-    #./zulip.nix
+    # ./krita.nix
+    # ./zulip.nix
   ];
 }
