@@ -19,6 +19,7 @@
       "maccy"
       "dbeaver-community"
       "postgres-app"
+      "krita"
     ];
 
     brews = [
