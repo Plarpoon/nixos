@@ -10,9 +10,12 @@
     onActivation = {
       autoUpdate = true;
       upgrade = true;
-      cleanup = "zap";
       extraFlags = [ "--force" ];
     };
+
+    taps = [
+      "netbirdio/tap"
+    ];
 
     casks = [
       "librewolf"
@@ -21,10 +24,12 @@
       "dbeaver-community"
       "postgres-app"
       "krita"
+      "netbirdio/tap/netbird-ui"
     ];
 
     brews = [
       "direnv"
+      "libdpp"
     ];
   };
 
