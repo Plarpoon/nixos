@@ -13,10 +13,6 @@
       extraFlags = [ "--force" ];
     };
 
-    taps = [
-      "netbirdio/tap"
-    ];
-
     casks = [
       "librewolf"
       "jellyfin-media-player"
@@ -24,12 +20,16 @@
       "dbeaver-community"
       "postgres-app"
       "krita"
+      "obsidian"
       "netbirdio/tap/netbird-ui"
+      "vorssaint"
     ];
 
     brews = [
       "direnv"
       "libdpp"
+      "croc"
+      "chezmoi"
     ];
   };
 
